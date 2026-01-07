@@ -1,0 +1,464 @@
+.center-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: rgb(148, 26, 26);
+}
+
+.center-page h2 {
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 0px; 
+}
+
+.btn-sec{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+}
+
+.login{
+    background:white;
+    width:270px;
+    height:350px;
+    padding:30px;
+    border-radius:5px;
+    margin-top: 45px;
+}
+
+.login h2{
+    margin-top: 0.5px;
+    text-align: center;
+}
+
+.loginform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loginform input{
+    margin-top: 12px;
+    padding:10px;
+    border:1.5px solid;
+    border-radius:3px;
+}
+
+.login-btn{
+    width:80px;
+    padding:10px;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color:white;
+    border:0.5 solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:18px;
+}
+
+.forgot-btn{
+    width:140px;
+    padding:10px;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color:white;
+    border:0.5 solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:0.5px;
+}
+
+.login-btn:hover{
+    background:rgb(148,26,26);
+}
+
+.forgot-btn:hover{
+    background:rgb(148,26,26);  
+}
+
+.error{
+    color:red;
+    font-size:14px;
+    text-align: center;
+}
+
+.signup-btn{
+    width:80px;
+    padding:10px;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color:white;
+    border:0.5 solid;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:18px;
+}
+
+.signup-btn:hover{
+     background:rgb(148,26,26);  
+}
+
+.signup{
+    background-color: white;
+    width:300px;
+    height:380px;
+    border-radius: 3px;
+    padding:30px;
+    margin-top: 20px;
+}
+
+.signupform{
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.signupform input{
+    margin-top: 10px;
+    padding:8px;
+    border:1px solid;
+    border-radius:4px;
+}
+
+.signupform button{
+    width:80px;
+    margin-top: 5px;
+    padding:10px;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color:white;
+    border:0.5 solid;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.signupform button:hover{
+    background: rgb(148,26,26);
+}
+.signup p{
+    text-align: center;
+    color:black;
+}
+
+.signup p button{
+    background-color: rgb(227, 131, 131);
+    color:white;
+    border:0.5 solid;
+    border-radius: 3px;
+    cursor: pointer;
+    padding:7px;
+}
+
+.signup p button:hover{
+    background :rgb(148,26,26);
+}
+
+.otp{
+    margin-top:50px;
+    justify-content: center;
+    padding:40px;
+    width:240px;
+    height:200px;
+    background-color: white;
+    border:1.5px solid;
+    border-radius: 3px;
+}
+
+.otpform{
+    display:flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+.otpform input{
+    margin-top: 20px;
+    padding:10px;
+    border:1px solid;
+    border-radius: 2px;
+}
+
+.otpform button{
+    width:100px;
+    padding:6px;
+    border:2px solid;
+    border-radius: 3px;
+    background-color:rgb(227, 131, 131) ;
+    color:white;
+    align-self: center;
+    margin-top: 1px;
+}
+
+.otpform button:hover{
+    background: rgb(148,26,26);
+}
+
+.forgotPassword{
+    margin-top:50px;
+    justify-content: center;
+    padding:40px;
+    width:250px;
+    height:180px;
+    background-color: white;
+    border:1.5px solid;
+    border-radius: 3px;
+}
+
+.forgotPasswordForm{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+
+.forgotPasswordForm input{
+    margin-top: 20px;
+    padding:10px;
+    border:1px solid;
+    border-radius: 2px;
+}
+
+.forgotPasswordForm button{
+    width:100px;
+    padding:6px;
+    border:2px solid;
+    border-radius: 3px;
+    background-color:rgb(227, 131, 131) ;
+    color:white;
+    align-self: center;
+    margin-top: 1px;
+}
+
+.forgotPasswordForm button:hover{
+    background: rgb(148,26,26);
+}
+
+.reset {
+    margin-top:50px;
+    justify-content: center;
+    padding:40px;
+    width:250px;
+    height:180px;
+    background-color: white;
+    border:1.5px solid;
+    border-radius: 3px;
+}
+
+/* .resetPassword{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+} */
+
+.reset{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.reset input{
+    padding: 7px;
+    margin-top: 5px;
+    text-align: center;
+    border:1px solid;
+    border-radius: 2px;
+}
+
+.reset button{
+    margin-top: 12px;
+    padding:10px;
+    width:150px;
+    border:2px solid;
+    border-radius: 3px;
+    background-color:rgb(227, 131, 131) ;
+    color:white;
+    align-self:center;
+}
+
+.reset button:hover{
+    background: rgb(148,26,26);
+}
+
+.dashboard{
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background:rgb(148, 26, 26) ;
+}
+
+.dashboard-navbar{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:2px;
+    height:60px;
+    background-color:rgb(159, 66, 66);
+    color:white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav span {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.logout-btn {
+    padding: 6px 14px;
+    background-color: rgb(227, 131, 131);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+     background: rgb(148, 26, 26);
+}
+
+.navbar-divider {
+    height: 2px;
+    background-color: #ccc;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.search-bus{
+  color:white;
+  display:flex;
+  flex-direction: row;
+}
+
+.search-bus h2{
+    align-self: center;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    border:1px solid;
+    border-radius: 2px;
+    background-color: white;
+    width:300px;
+    height:200px;
+    margin-top:90px;
+}
+
+.search-form select{
+    border:1px solid;
+    border-radius: 2px;
+    padding:5px;
+    margin-top: 10px;
+}
+
+.search-form input{
+    border:1px solid;
+    border-radius: 2px;
+    padding:5px;
+    margin-top:25px;
+}
+
+.search-form button{
+    margin-top: 20px;
+    padding:10px;
+    width:40%;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color: white;
+    border:1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.search-form button:hover{
+    background: rgb(148,26,26);
+}
+
+.avail-bus{
+    flex:1;
+}
+
+.avail-bus h3{
+    text-align:center;
+}
+
+.avail-bus p{
+    text-align: center;
+}
+
+.showing-bus{
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+    width:250px;
+    border:1px solid;
+    border-radius: 2px;
+    background-color: white;
+    color:black;
+    margin-left:350px;
+    align-items: center;
+    margin-top:60px;
+}
+
+.showing-bus button{
+    margin-top: 20px;
+    padding:10px;
+    width:40%;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color: white;
+    border:1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.showing-bus button:hover{
+    background: rgb(148,26,26);
+}
+
+
+.mybooking p{
+    text-align: center;
+}
+
+.booking-box{
+    width: 100%;
+    background-color: rgb(229, 150, 150);
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between; 
+    align-items: center;             
+    gap: 15px;                       
+    border-radius: 4px;             
+    margin-bottom: 10px;             
+}
+
+.mybooking button{
+    margin-top: 10px;
+    padding:10px;
+    width:120px;
+    height:50px;
+    align-self: center;
+    background-color: rgb(227, 131, 131);
+    color:black;
+    border:1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.mybooking button:hover{
+    background: rgb(148,26,26);
+}
