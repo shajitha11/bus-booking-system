@@ -16,6 +16,8 @@ module.exports = {
 
     deleteBus: `update bus set deletedAt=CURRENT_TIMESTAMP where busId=? and deletedAt is null`,
 
-    getSeatLayout:`select seat_rows,seat_columns from bus
-    where busId=? and deletedAt is null`
+    getSeatLayout: `select seat_rows,seat_columns from bus
+    where busId=? and deletedAt is null`,
+
+
 };

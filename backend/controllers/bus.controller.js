@@ -13,7 +13,7 @@ async function createBus(req, res) {
             return res.status(400).json({ success: false, error: "All fields are required" });
 
         const totalSeats=seat_rows*seat_columns;
-        await db.query(query.createBus, [busNumber, busType, seat_rows,seat_columns,totalSeats, routeId])
+        await db.query(query.createBus, [busNumber, busType, seat_rows,seat_columns,totalSeats, routeId]);
         return res.status(201).json({ success: true, message: "Bus created successfully" });
     }
     catch (error) {

@@ -159,7 +159,10 @@ function SearchBus() {
                     >
                         <p><b>Bus No:</b> {bus.busNumber}</p>
                         <p><b>Type:</b> {bus.busType}</p>
-                        <p><b>Total Seats:</b> {bus.totalSeats}</p>
+                        <p>
+                            <b>Available Seats:</b>{" "}
+                            {bus.totalSeats - (bus.bookedCount || 0)}
+                        </p>
                         <button onClick={() => handleBooking(bus.busId)}>
                             Book Now
                         </button>

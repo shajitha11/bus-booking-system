@@ -20,8 +20,10 @@ async function createBooking(req, res) {
         .status(400)
         .json({ success: false, error: "All fields are required" });
     }
+
     const [countResult] = await db.query(query.getBookedCount, [busId, travelDate]);
     const bookedCount = countResult[0].bookedCount;
+
     const [busResult] = await db.query(busQuery.getSeatLayout, [busId]);
     const rows = busResult[0].seat_rows;
     const columns = busResult[0].seat_columns;
@@ -48,9 +50,10 @@ async function createBooking(req, res) {
       travelDate,
       seatNumber]);
 
+
     return res.status(201).json({
       success: true,
-      message: "Booking created successfully" ,
+      message: "Booking created successfully",
       seatNumber
     });
   } catch (error) {

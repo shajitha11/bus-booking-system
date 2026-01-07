@@ -28,7 +28,7 @@ function MyBookings() {
 
     setLoading(true);
     try {
-      const res = await updateBookingStatus(token, bookingId, "CANCELLED");
+      const res = await updateBookingStatus(bookingId, "CANCELLED",token);
       if (res.success) {
         alert("Booking cancelled successfully");
         loadBookings();
