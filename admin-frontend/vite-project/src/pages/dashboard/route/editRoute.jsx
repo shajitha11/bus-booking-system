@@ -52,7 +52,7 @@ export default function EditRoute() {
     e.preventDefault();
 
     if (form.sourceDistrictId === form.destinationDistrictId) {
-      alert("Source & Destination same aagakoodaadhu");
+      alert("Source & Destination should not be same");
       return;
     }
 
