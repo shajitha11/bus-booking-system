@@ -7,10 +7,13 @@ import Otp from "./pages/auth/Otp";
 import AdminProtectedRoute from "./routes/AdminProtectedRoute";
 
 import AdminHome from "./pages/dashboard/AdminHome";
-import Bus from "./pages/dashboard/Bus";
-import RoutePage from "./pages/dashboard/Route";
+import Bus from "./pages/dashboard/bus/bus";
+import RoutePage from "./pages/dashboard/route/route";
 import District from "./pages/dashboard/District";
 import Booking from "./pages/dashboard/Booking";
+
+import AddRoute from "./pages/dashboard/route/AddRoute";
+import EditRoute from "./pages/dashboard/route/EditRoute";
 
 function App() {
   return (
@@ -24,7 +27,11 @@ function App() {
         <Route element={<AdminProtectedRoute />}>
           <Route path="/dashboard" element={<AdminHome />}>
             <Route path="district" element={<District />} />
-            <Route path="route" element={<RoutePage />} />
+            <Route path="route">
+              <Route index element={<RoutePage />} />
+              <Route path="add" element={<AddRoute />} />
+              <Route path="edit/:id" element={<EditRoute />} />
+            </Route>
             <Route path="bus" element={<Bus />} />
             <Route path="booking" element={<Booking />} />
           </Route>
