@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL =  import.meta.env.BASE_URL;
 
 async function request(endpoint, method = "GET", data, token) {
   const res = await fetch(`${BASE_URL}${endpoint}`, {
@@ -18,8 +18,15 @@ async function request(endpoint, method = "GET", data, token) {
         window.location.href="/login";
         return;
     }
-    throw new Error(json.error||json.message||"Request failed");
-        }
+      const error = new Error(json.error || json.message || "Request failed");
+      error.response = {
+      status: res.status,
+      data: json,
+    };
+
+    throw error;
+    };
+
   return json;
 }
 
