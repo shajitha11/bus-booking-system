@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    __BASE_URL__: JSON.stringify('http://mainline.proxy.rlwy.net:27071/api'),
+    __BASE_URL__: JSON.stringify('https://bus-booking-system-production.up.railway.app/api'),
   },
   preview: {
     allowedHosts: [
