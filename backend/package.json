@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "env-cmd -f .env node app.js",
+    "prod": "node app.js",
     "test": "jest"
   },
   "dependencies": {
