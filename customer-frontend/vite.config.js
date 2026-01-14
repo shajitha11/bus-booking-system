@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   preview: {
-   allowedHosts: 'all'
+    allowedHosts: [
+      'charismatic-generosity-production-57b7.up.railway.app'
+    ]
   }
 })
