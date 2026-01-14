@@ -1,5 +1,4 @@
-const BASE_URL =  import.meta.env.BASE_URL;
-
+const BASE_URL =  import.meta.env.VITE_BASE_URL || __BASE_URL__;
 async function request(endpoint, method = "GET", data, token) {
   const res = await fetch(`${BASE_URL}${endpoint}`, {
     method,
