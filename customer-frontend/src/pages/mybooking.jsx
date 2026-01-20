@@ -31,7 +31,7 @@ function MyBookings() {
       const res = await updateBookingStatus(bookingId, "CANCELLED",token);
       if (res.success) {
         alert("Booking cancelled successfully");
-        loadBookings();
+         await loadBookings();
       } else {
         alert("Failed to cancel booking: " + (res.error || "Unknown error"));
       }

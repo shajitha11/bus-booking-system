@@ -12,12 +12,10 @@ module.exports = {
     where b.deletedAt is null
     order by b.createdAt desc`,
 
-    updateBus: `update bus set busNumber=?,busType=?,seat_rows=?,seat_columns=?,routeId=? where busId=? and deletedAt is null`,
+    updateBus: `update bus set busNumber=?,busType=?,seat_rows=?,seat_columns=?,totalSeats=?,routeId=? where busId=? and deletedAt is null`,
 
     deleteBus: `update bus set deletedAt=CURRENT_TIMESTAMP where busId=? and deletedAt is null`,
 
-    getSeatLayout: `select seat_rows,seat_columns from bus
+    getSeatLayout: `select seat_rows,seat_columns,totalSeats from bus
     where busId=? and deletedAt is null`,
-
-
 };

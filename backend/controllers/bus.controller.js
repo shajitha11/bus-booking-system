@@ -79,12 +79,14 @@ async function getBusSeatStatus(req, res) {
     }
 
     const [busRes] = await db.query(query.getSeatLayout, [busId]);
-
+console.log(bookingQuery.getBookedSeats)
+console.log([busId, date])
     const [seatRes] = await db.query(bookingQuery.getBookedSeats, [busId, date]);
-
+console.log(seatRes)
     return res.json({
         rows: busRes[0].seat_rows,
         columns: busRes[0].seat_columns,
+        totalSeats: busRes[0].totalSeats,
         bookedSeats: seatRes.map(s => s.seatNumber)
     })
 }

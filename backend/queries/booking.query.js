@@ -67,5 +67,11 @@ module.exports = {
     deleteBooking: `update booking set bookingStatus=? where bookingId=? and deletedAt is null`,
 
     getBookedCount:`select count(*) as bookedCount from booking
-    where busId=? and travelDate=? and bookingStatus='CONFIRMED' and deletedAt is null`
+    where busId=? and travelDate=? and bookingStatus='CONFIRMED' and deletedAt is null`,
+
+    getBookedSeats: `
+  select seatNumber from booking
+  where busId=? and travelDate=? and bookingStatus='CONFIRMED' and deletedAt is null
+`
+
 };

@@ -6,6 +6,7 @@ import {
     getAllRoutes,
     getAllBuses,
     createBooking,
+    getBusSeatStatus
 } from "../services/api";
 
 function SearchBus() {
@@ -29,6 +30,10 @@ function SearchBus() {
             return;
         }
         loadData();
+
+        if(searched){
+            searchBus();
+        }
     }, []);
 
     const loadData = async () => {
@@ -45,36 +50,56 @@ function SearchBus() {
         }
     };
 
-    const searchBus = () => {
-        const fromId = Number(from);
-        const toId = Number(to);
+const searchBus = async () => {
+    const fromId = Number(from);
+    const toId = Number(to);
 
-        setSearched(true);
+    setSearched(true);
 
-        if (!fromId || !toId) {
-            alert("Please select From and To district");
-            return;
-        }
+    if (!fromId || !toId) {
+        alert("Please select From and To district");
+        return;
+    }
 
-        if (fromId === toId) {
-            alert("From and To district same ah iruka kudadhu");
-            return;
-        }
+    if (fromId === toId) {
+        alert("From and To district same ah iruka kudadhu");
+        return;
+    }
 
-        const matchedRoutes = routes.filter(
-            (r) =>
-                r.sourceDistrictId === fromId &&
-                r.destinationDistrictId === toId
-        );
+    if (!travelDate) {
+        alert("Please select travel date");
+        return;
+    }
 
-        const routeIds = matchedRoutes.map(r => r.routeId);
+    const matchedRoutes = routes.filter(
+        (r) =>
+            r.sourceDistrictId === fromId &&
+            r.destinationDistrictId === toId
+    );
 
-        const matchedBuses = buses.filter(
-            b => routeIds.includes(b.routeId)
-        );
+    const routeIds = matchedRoutes.map(r => r.routeId);
 
-        setResultBuses(matchedBuses);
-    };
+    const matchedBuses = buses.filter(
+        b => routeIds.includes(b.routeId)
+    );
+
+    const busesWithBookedCount = await Promise.all(
+        matchedBuses.map(async (bus) => {
+            try {
+                const seatStatus = await getBusSeatStatus(bus.busId, travelDate, token);
+                const bookedCount = seatStatus.bookedSeats?.length || 0;
+                const totalSeats = seatStatus.totalSeats || bus.totalSeats || (bus.seat_rows * bus.seat_columns);
+                return { ...bus, bookedCount };
+            } catch (error) {
+                console.error("Error fetching seat status for busId:", bus.busId, error);
+                return { ...bus, bookedCount: 0 }; 
+            }
+        })
+    );
+
+    setResultBuses(busesWithBookedCount);
+};
+
 
     const handleBooking = async (busId) => {
         if (!travelDate) {
@@ -91,6 +116,7 @@ function SearchBus() {
         try {
             const res = await createBooking({ busId, travelDate }, token);
             alert(res.message || "Booking successful");
+            await searchBus();
             navigate("/dashboard/myBooking");
         } catch (err) {
             alert(err.message || "Booking failed");

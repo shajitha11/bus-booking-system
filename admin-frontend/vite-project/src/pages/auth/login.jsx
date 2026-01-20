@@ -30,8 +30,8 @@ function Login() {
       } else {
         setError(res.error || "Login failed");
       }
-    } catch {
-      setError("Server error");
+    } catch (err){
+      setError(err?.response?.data?.error || "Server error");
     } finally {
       setLoading(false);
     }
