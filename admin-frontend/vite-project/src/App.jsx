@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Login from "./pages/auth/login";
-import Otp from "./pages/auth/otp";
+import Login from "./pages/auth/login.jsx";
+import Otp from "./pages/auth/otp.jsx";
 
 import AdminProtectedRoute from "./routes/adminProtectedRoute";
 
-import AdminHome from "./pages/dashboard/adminHome";
-import Bus from "./pages/dashboard/bus/bus";
-import RoutePage from "./pages/dashboard/route/route";
-import District from "./pages/dashboard/district";
-import Booking from "./pages/dashboard/booking";
+import AdminHome from "./pages/dashboard/adminHome.jsx";
+import Bus from "./pages/dashboard/bus/bus.jsx";
+import RoutePage from "./pages/dashboard/route/route.jsx";
+import District from "./pages/dashboard/district.jsx";
+import Booking from "./pages/dashboard/booking.jsx";
 
-import AddRoute from "./pages/dashboard/route/addRoute";
-import EditRoute from "./pages/dashboard/route/editRoute";
+import AddRoute from "./pages/dashboard/route/addRoute.jsx";
+import EditRoute from "./pages/dashboard/route/editRoute.jsx";
 
 function App() {
   return (
