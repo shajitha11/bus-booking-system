@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Login from "./pages/auth/Login.jsx";
+import Login from "./pages/auth/login.jsx";
 import Otp from "./pages/auth/Otp.jsx";
 
-import AdminProtectedRoute from "./routes/adminProtectedRoute";
+import AdminProtectedRoute from "./routes/adminProtectedRoute.jsx";
 
 import AdminHome from "./pages/dashboard/adminHome.jsx";
 import Bus from "./pages/dashboard/bus/bus.jsx";
